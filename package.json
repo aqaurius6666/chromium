@@ -1,8 +1,8 @@
 {
-  "name": "@sparticuz/chromium",
+  "name": "@aqaurius6666/chromium",
   "version": "109.0.0",
   "author": {
-    "name": "Kyle McNally"
+    "name": "Vu Nguyen"
   },
   "license": "MIT",
   "description": "Chromium Binary for Serverless Platforms",
@@ -29,12 +29,12 @@
     "typescript": "^4.8.3"
   },
   "bugs": {
-    "url": "https://github.com/Sparticuz/chromium/issues"
+    "url": "https://github.com/aqaurius6666/chromium/issues"
   },
-  "homepage": "https://github.com/Sparticuz/chromium",
+  "homepage": "https://github.com/aqaurius6666/chromium",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Sparticuz/chromium.git"
+    "url": "git://github.com/aqaurius6666/chromium.git"
   },
   "keywords": [
     "aws",
