@@ -9,7 +9,7 @@ Resources:
   layer:
     Type: AWS::Serverless::LayerVersion
     Properties:
-        LayerName: sparticuz-chromium
+        LayerName: aqaurius6666-chromium
         ContentUri: code/
         CompatibleRuntimes:
           - nodejs14.x

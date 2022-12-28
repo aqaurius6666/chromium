@@ -3,6 +3,7 @@ import { IncomingMessage } from 'http';
 import LambdaFS from './lambdafs';
 import { join } from 'path';
 import { URL } from 'url';
+import { tmpdir } from 'os';
 
 /** Viewport taken from https://github.com/puppeteer/puppeteer/blob/main/docs/api/puppeteer.viewport.md */
 interface Viewport {
@@ -180,15 +181,16 @@ class Chromium {
    * If not running on AWS Lambda nor Google Cloud Functions, `null` is returned instead.
    */
   static executablePath(input?: string): Promise<string> {
-   
-    if (existsSync('/tmp/chromium') === true && input === undefined) {
-      for (const file of readdirSync('/tmp')) {
+    const tmpDir = tmpdir()
+    const tmpChromiumPath = join(tmpDir, "chromium")
+    if (existsSync(tmpChromiumPath) === true) {
+      for (const file of readdirSync(tmpDir)) {
         if (file.startsWith('core.chromium') === true) {
-          unlinkSync(`/tmp/${file}`);
+          unlinkSync(`${tmpDir}/${file}`);
         }
       }
 
-      return Promise.resolve('/tmp/chromium');
+      return Promise.resolve(tmpChromiumPath);
     }
     let _input = join(__dirname, '..', 'bin');
     if (input !== undefined) {

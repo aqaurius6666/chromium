@@ -1,7 +1,7 @@
 const { ok } = require('assert');
 const { createHash } = require('crypto');
 const puppeteer = require("puppeteer-core");
-const chromium = require('@sparticuz/chromium');
+const chromium = require('@aqaurius6666/chromium');
 
 exports.handler = async (event, context) => {
   let browser = null;
